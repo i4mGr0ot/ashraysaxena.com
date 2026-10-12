@@ -4,27 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Research &middot; Ashray Saxena</title>
-<meta name="description" content="Research by Ashray Saxena across aeroelasticity, structural acoustics, propulsion aerodynamics and thermal systems." />
+<meta name="description" content="Research by Ashray Saxena in aeroelasticity, structural acoustics, aerodynamic optimisation, surrogate modelling, combustion acoustics and energy systems." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html"><span class="mono">AS</span> Ashray Saxena</a>
+    <a class="brand" href="index.html">Ashray Saxena</a>
     <button class="nav-toggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html" class="active">Research</a>
+      <a href="publications.html">Publications</a>
       <a href="projects.html">Projects</a>
-      <a href="entrepreneurship.html">Entrepreneurship</a>
       <a href="experience.html">Experience</a>
-      <a href="mailto:f20231043@pilani.bits-pilani.ac.in" class="nav-cta">Get in touch</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
     </nav>
   </div>
 </header>
@@ -32,101 +32,126 @@
 <section class="page-head">
   <div class="container">
     <p class="kicker">Research</p>
-    <h1 style="max-width:16ch;">Where I dig in deep.</h1>
-    <p class="lede" style="margin-top:1.2rem;">My research sits at the meeting points of aerodynamics, structures, acoustics and propulsion. Each card opens to the full write-up, figures and honest status.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="grid grid-3">
-
-      <a class="card reveal" href="r-flutter.html">
-        <div class="card-media tall"><img src="assets/img/research_flutter_1.png" alt="Transonic Flutter Prediction" /></div>
-        <div class="card-body">
-          <span class="tag">Aeroelasticity &middot; ROM + UQ</span>
-          <h3>Transonic Flutter Prediction</h3>
-          <p>A data-driven reduced-order model that predicts the flutter boundary from high-fidelity SU2 simulations with calibrated uncertainty and sub-millisecond queries.</p>
-          <div class="meta-row"><span class="chip">SU2 FSI</span><span class="chip">Active learning</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="r-acoustics.html">
-        <div class="card-media tall"><img src="assets/img/research_acoustics_2.png" alt="Two-Plate Acoustic Waveguide" /></div>
-        <div class="card-body">
-          <span class="tag">Structural Acoustics</span>
-          <h3>Two-Plate Acoustic Waveguide</h3>
-          <p>New mean-flow physics for a two-flexible-plate waveguide, with closed-form low-Mach corrections and a critical-layer threshold.</p>
-          <div class="meta-row"><span class="chip">Pridmore-Brown</span><span class="chip">Asymptotics</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="r-nacelle.html">
-        <div class="card-media tall"><img src="assets/img/nacelle_1.png" alt="Engine Nacelle Optimization" /></div>
-        <div class="card-body">
-          <span class="tag">Propulsion Aerodynamics</span>
-          <h3>Engine Nacelle Optimization</h3>
-          <p>A Python framework coupling Class Shape Transformation to an in-house viscous-potential solver for fast nacelle drag reduction.</p>
-          <div class="meta-row"><span class="chip">CST</span><span class="chip">Viscous-potential</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="r-thermoacoustic.html">
-        <div class="card-media tall"><img src="assets/img/dhio_spl.gif" alt="Thermoacoustic Coupling in LREs" /></div>
-        <div class="card-body">
-          <span class="tag">Combustion &amp; Acoustics</span>
-          <h3>Thermoacoustic Coupling in LREs</h3>
-          <p>A high-fidelity frequency-domain model of combustion instability in a liquid rocket engine, used to pick chamber geometry that suppresses oscillations.</p>
-          <div class="meta-row"><span class="chip">Frequency domain</span><span class="chip">IEEE AeroConf</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="r-bms.html">
-        <div class="card-media tall"><img src="assets/img/research_bms.png" alt="Liquid-Cooled Battery System" /></div>
-        <div class="card-body">
-          <span class="tag">Thermal Management</span>
-          <h3>Liquid-Cooled Battery System</h3>
-          <p>A coupled electrochemical and thermal COMSOL model of a 14S4P liquid-cooled pack, holding cell-to-cell temperature uniformity under high discharge.</p>
-          <div class="meta-row"><span class="chip">COMSOL</span><span class="chip">BESS</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="r-sco2.html">
-        <div class="card-media tall" style="background:linear-gradient(150deg,#1c222c,#11141a);"><div style="text-align:center;color:var(--accent);font-family:var(--serif);font-size:1.9rem;line-height:1.15;">sCO&#8322;<br><span style='font-size:1rem;color:var(--muted);'>Pressure Exchanger</span></div></div>
-        <div class="card-body">
-          <span class="tag">Energy Systems</span>
-          <h3>sCO&#8322; Pressure Exchanger</h3>
-          <p>A continuous-wave rotor pressure exchanger for supercritical CO&#8322; cycles, with a 49 percent gain in isentropic efficiency over rotary blade designs.</p>
-          <div class="meta-row"><span class="chip">+49% efficiency</span><span class="chip">Wave dynamics</span></div>
-        </div>
-      </a>
-
-    </div>
+    <h1>Research</h1>
+    <p class="lede">Work at the meeting points of aerodynamics, structures, acoustics and propulsion, with a recurring theme: fast, calibrated models of expensive high-fidelity physics that can be used directly in design. Each entry links to a full write-up with figures, methods and current status.</p>
   </div>
 </section>
 
 <section class="now">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="kicker">Upcoming Research</p>
-      <h2>Two stints I am excited about</h2>
-    </div>
+    <div class="sec-title"><h2>Current Appointments</h2></div>
     <div class="now-grid">
-      <div class="now-card reveal">
-        <span class="tag">RWTH Aachen &middot; Bachelor's Thesis</span>
-        <h3>Preliminary Aircraft Design of Hydrogen Aircraft Concepts</h3>
-        <p class="org">Institute of Aerospace Systems &middot; Prof. Eike Stumpf</p>
-        <p>Investigating cabin and hydrogen tank layout integration for hydrogen powered aircraft through trade off and optimization studies in the in house design tool UNICADO.</p>
-        <p class="when">Aug 2026 to Feb 2027 &middot; Aachen, Germany</p>
-      </div>
-      <div class="now-card reveal">
-        <span class="tag">University of Manchester &middot; Visiting Research</span>
-        <h3>A Novel Atomiser for High-Speed Propulsion Systems</h3>
-        <p class="org">Mechanical &amp; Aerospace Engineering &middot; Dr. Kuppuraj Rajamanickam</p>
-        <p>Developing a new atomiser concept for high speed propulsion, working at the intersection of spray and atomisation physics and injector geometry.</p>
-        <p class="when">Jul 2026 to Dec 2026 &middot; Remote</p>
+    <div class="now-card">
+      <span class="tag">Bachelor&rsquo;s Thesis &middot; Project ATLAS</span>
+      <h3>Credibility Estimation of Future Aircraft Concepts</h3>
+      <p class="org">Institute of Aerospace Systems (ILR), RWTH Aachen University</p>
+      <p>A credibility-assessment methodology for 2040&ndash;45 entry-into-service aircraft concepts, implemented in the preliminary-design environment UNICADO: Dempster&ndash;Shafer evidence theory over epistemic uncertainty in component mass estimation, applied to kerosene and hydrogen ATLAS configurations (DLR &amp; Airbus).</p>
+      <p class="when">Aug 2026 &ndash; Feb 2027 &middot; Aachen, Germany &middot; Advisor: Univ.-Prof. Dr.-Ing. Eike Stumpf</p>
+    </div>
+    <div class="now-card">
+      <span class="tag">Visiting Research</span>
+      <h3>A Novel Atomiser for High-Speed Propulsion Systems</h3>
+      <p class="org">Mechanical, Aerospace &amp; Civil Engineering, University of Manchester</p>
+      <p>Design of an atomiser concept for high-speed propulsion, coupling spray and primary-breakup physics to injector geometry to improve mixing uniformity and combustion stability.</p>
+      <p class="when">Jul 2026 &ndash; Dec 2026 &middot; Remote &middot; Advisor: Dr. Kuppuraj Rajamanickam</p>
+    </div>
+    <div class="now-card">
+      <span class="tag">Industry Research</span>
+      <h3>GNSS-Denied Visual&ndash;Inertial Navigation (IRIS)</h3>
+      <p class="org">LAT Aerospace</p>
+      <p>Simulation and characterisation instrument for a production MSCKF navigation filter, and a square-root (&radic;VINS) backend formulation benchmarked on a custom visual&ndash;inertial rig.</p>
+      <p class="when">Dec 2025 &ndash; present &middot; with the Gas Turbine Engine team</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-title"><h2>Research Projects</h2><a href="publications.html">Publications &rarr;</a></div>
+  <div class="rlist">
+    <div class="ritem">
+      <a class="rthumb" href="r-flutter.html"><img src="assets/img/research_flutter_1.png" alt="Flutter boundary" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-flutter.html">Uncertainty-Calibrated Transonic Flutter-Boundary Prediction</a></h3>
+        <div class="venue">Independent research &middot; Jan 2026 &ndash; present</div>
+        <p>An actively-sampled reduced-order model: a p&ndash;k/Theodorsen baseline and coupled SU2 fluid&ndash;structure interaction feed a Gaussian-process operator with split-conformal calibration. Reproduces the AGARD 445.6 flutter speed index within ~12% and the Isogai Case-A transonic dip, converging the boundary in materially fewer solves than random sampling.</p>
+        <div class="meta-row"><span class="chip">Aeroelasticity</span><span class="chip">SU2 FSI</span><span class="chip">Gaussian processes</span><span class="chip">Conformal UQ</span></div>
       </div>
     </div>
+    <div class="ritem">
+      <a class="rthumb" href="r-acoustics.html"><img src="assets/img/research_acoustics_2.png" alt="Two-plate waveguide" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-acoustics.html">Critical-Layer Instability of Structural-Acoustic Wall Modes in a Two-Flexible-Plate Channel</a></h3>
+        <div class="venue">Journal of Fluid Mechanics (under review) &middot; sole author</div>
+        <p>Closed-form O(M) corrections to every coupled branch via asymptotics in the fluid-loading parameter (Pridmore&ndash;Brown equation with plate-admittance boundaries), the critical-layer threshold M<sub>crit</sub> = &Omega;/&xi;, and parity-protected absorption of wall modes. Three independent numerical methods agree to ~1 part in 10<sup>9</sup>.</p>
+        <div class="meta-row"><span class="chip">Structural acoustics</span><span class="chip">Asymptotics</span><span class="chip">Critical layer</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="r-nacelle.html"><img src="assets/img/nacelle_1.png" alt="Nacelle optimisation" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-nacelle.html">Rapid Aerodynamic Optimization of Engine Nacelles</a></h3>
+        <div class="venue">Acceleron Aerospace Journal, vol. 7, 2026 &middot; first author</div>
+        <p>Class Shape Transformation (Kulfan) parameterisation of the nacelle lip and cowl coupled to an in-house viscous&ndash;potential solver and an automated lip-morphing optimiser; localises drag minima and incipient separation at a fraction of RANS cost.</p>
+        <div class="meta-row"><span class="chip">CST</span><span class="chip">Viscous&ndash;potential</span><span class="chip">Shape optimisation</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="r-f1.html"><span>F1 2026</span><small>Minimum lap time</small></a>
+      <div>
+        <h3><a href="r-f1.html">Joint Optimisation of Active Aerodynamics and Electric Energy Deployment in 2026 Formula One</a></h3>
+        <div class="venue">Proc. IMechE Part D (under review) &middot; sole author</div>
+        <p>Minimum-time optimal control of a qualifying lap that co-schedules active-aero mode with 350 kW MGU-K deploy/harvest under the regulatory rampdown, solved by CasADi/IPOPT direct collocation over a free racing line. Calibrated, the model matches real 2026 pole times to within 0.17%.</p>
+        <div class="meta-row"><span class="chip">Optimal control</span><span class="chip">CasADi/IPOPT</span><span class="chip">Vehicle dynamics</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="r-ustol.html"><span>uSTOL</span><small>Surrogate wing design</small></a>
+      <div>
+        <h3><a href="r-ustol.html">RANS-Verified Surrogate Design of Wing Sections for a uSTOL Aircraft</a></h3>
+        <div class="venue">IAAI-27 (under review) &middot; first author &middot; with Dr. Sharad Shrivastava</div>
+        <p>An inverse-design pipeline showing that training-data generation, not surrogate architecture, dominates design quality: a physics-regularised CST fit of the UIUC corpus, an NSGA-II Reynolds-envelope data engine and a Reynolds-conditioned PointNet++ surrogate. Collapses the generalisation gap from 9.8&times; to 1.4&times; and improves L/D by 15.4% over a B&eacute;zier-GAN baseline, verified with SU2 RANS.</p>
+        <div class="meta-row"><span class="chip">Machine learning</span><span class="chip">PointNet++</span><span class="chip">NSGA-II</span><span class="chip">SU2 RANS</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="r-thermoacoustic.html"><img src="assets/img/dhio_spl.gif" alt="Sound pressure level field" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-thermoacoustic.html">Frequency-Domain Analysis of Thermoacoustic Coupling in Liquid-Propellant Rocket Engines</a></h3>
+        <div class="venue">IEEE Aerospace Conference 2026 (accepted abstract)</div>
+        <p>An axisymmetric Helmholtz model swept over the ignition band, with Rayleigh-criterion mitigation by spatially decoupling pressure antinodes from the heat-release zone: a fast geometry and damping screen ahead of coupled reacting-flow simulation.</p>
+        <div class="meta-row"><span class="chip">Combustion acoustics</span><span class="chip">COMSOL</span><span class="chip">Rayleigh criterion</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="r-camswitch.html"><img src="assets/img/criss_rover.png" alt="CRISS rover" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-camswitch.html">3D-Printed Rotary Cam Switch for Steering-Mode Transitions in a 4WIS Rover</a></h3>
+        <div class="venue">ACDSA 2027 (under review) &middot; V. Shah, A. Saxena, M. S. Dasgupta</div>
+        <p>A low-cost state-transition mechanism for a four-wheel independent steer-by-wire rover: a 3D-printed rotary cam switch and encoder reliably switch between zero-radius pivot and Ackermann modes, tested on an autonomous rover.</p>
+        <div class="meta-row"><span class="chip">Mechanism design</span><span class="chip">Steer-by-wire</span><span class="chip">Robotics</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="r-sco2.html"><span>sCO<sub>2</sub></span><small>Pressure exchanger</small></a>
+      <div>
+        <h3><a href="r-sco2.html">Continuous-Wave Rotor Pressure Exchanger for Supercritical CO<sub>2</sub> Cycles</a></h3>
+        <div class="venue">Ongoing &middot; with Dr. Mani Sankar Dasgupta, BITS Pilani &middot; ISHRAE</div>
+        <p>Experimental study of transient pressure-wave management in rotor channels for direct-contact pressure exchange, achieving a 49% increase in isentropic efficiency over conventional rotary-blade designs with reduced mixing losses.</p>
+        <div class="meta-row"><span class="chip">Energy systems</span><span class="chip">Wave dynamics</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="r-bms.html"><img src="assets/img/research_bms.png" alt="Battery pack thermal field" loading="lazy" /></a>
+      <div>
+        <h3><a href="r-bms.html">Conjugate Thermal Management of a Liquid-Cooled 14S4P Battery Pack</a></h3>
+        <div class="venue">COMSOL Multiphysics study &middot; Oct &ndash; Dec 2025</div>
+        <p>A coupled electrochemical&ndash;thermal model with an Arrhenius ageing law, holding the temperature rise below ~8 &deg;C with no hotspots and state of health above 0.80 under continuous discharge.</p>
+        <div class="meta-row"><span class="chip">Thermal management</span><span class="chip">COMSOL</span></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -134,26 +159,28 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="big">Let's build something.</div>
-        <p class="muted" style="max-width:34ch;">Open to research collaborations, internships and conversations about aerospace, propulsion and anything at the edges of engineering.</p>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4>Pages</h4>
         <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
-        <a href="entrepreneurship.html">Entrepreneurship</a>
-        <a href="experience.html">Experience &amp; Leadership</a>
+        <a href="experience.html">Experience</a>
       </div>
       <div>
-        <h4>Connect</h4>
-        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">Email</a>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
         <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
       </div>
     </div>
     <div class="copy">
       <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
-      <span>Built with care &middot; BITS Pilani</span>
+      <span>Last updated October 2026</span>
     </div>
   </div>
 </footer>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joint Optimisation of Active Aerodynamics and Electric Energy Deployment for Minimum Lap Time in 2026 Formula One &middot; Ashray Saxena</title>
+<meta name="description" content="Sole-author paper under review at Proceedings of the IMechE, Part D: Journal of Automobile Engineering." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Ashray Saxena</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container" style="max-width:900px;">
+    <a class="back-link" href="research.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to Research
+    </a>
+    <p class="kicker">Research &middot; Optimal Control</p>
+    <h1>Joint Optimisation of Active Aerodynamics and Electric Energy Deployment for Minimum Lap Time in 2026 Formula One</h1>
+    <p class="lede">Sole-author paper under review at <em>Proceedings of the IMechE, Part D: Journal of Automobile Engineering</em>.</p>
+    <div class="hero-actions"><a class="btn" href="https://doi.org/10.2139/ssrn.7045379" target="_blank" rel="noopener">SSRN preprint</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:900px;">
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Problem</div><div class="v">Minimum-time qualifying lap</div></div><div class="fact"><div class="k">Controls</div><div class="v">Active aero + 350 kW MGU-K</div></div><div class="fact"><div class="k">Solver</div><div class="v">CasADi / IPOPT collocation</div></div><div class="fact"><div class="k">Validation</div><div class="v">Within 0.17% of 2026 poles</div></div></div>
+    <div class="gradient-hero"><div class="ttl">F1 2026</div><div class="sub">Active aerodynamics &middot; energy deployment</div></div>
+    <div class="prose" style="margin-top:28px;">
+  <h2>Motivation</h2>
+  <p>The 2026 Formula One regulations couple two new degrees of freedom: movable aerodynamic elements that switch between high-downforce and low-drag modes, and a 350 kW MGU-K whose deployment is ramped down with speed. Choosing when to switch aero mode and when to deploy or harvest energy are not independent decisions, so this work treats them as a <span class="highlight">single minimum-time optimal control problem</span>.</p>
+  <h2>Method</h2>
+  <ul>
+    <li>Direct collocation in CasADi with IPOPT, co-scheduling the active-aero mode with MGU-K deploy and harvest under the regulatory rampdown.</li>
+    <li>A free racing line optimised over the true track limits rather than a fixed reference path.</li>
+    <li>Three vehicle models of increasing fidelity, from a point mass to a transient single-track model.</li>
+  </ul>
+  <h2>Outcome</h2>
+  <p>Calibrated to demonstrated capability, the model reproduces real 2026 pole-position lap times to within <span class="highlight">0.17%</span>. A preprint is available on SSRN.</p>
+    </div>
+    <div class="detail-chips"><span class="chip">Optimal control</span><span class="chip">Direct collocation</span><span class="chip">CasADi / IPOPT</span><span class="chip">Vehicle dynamics</span><span class="chip">Energy management</span></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
+        <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
+      <span>Last updated October 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

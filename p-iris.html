@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IRIS: Simulation and Characterisation of a GNSS-Denied Visual&ndash;Inertial Navigation System &middot; Ashray Saxena</title>
+<meta name="description" content="Navigation work at LAT Aerospace, 2026." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Ashray Saxena</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container" style="max-width:900px;">
+    <a class="back-link" href="projects.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to Projects
+    </a>
+    <p class="kicker">Project &middot; LAT Aerospace</p>
+    <h1>IRIS: Simulation and Characterisation of a GNSS-Denied Visual&ndash;Inertial Navigation System</h1>
+    <p class="lede">Navigation work at LAT Aerospace, 2026.</p>
+    
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:900px;">
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Estimator</div><div class="v">MSCKF (OpenVINS fork)</div></div><div class="fact"><div class="k">Rendering</div><div class="v">Unreal Engine + Cesium</div></div><div class="fact"><div class="k">Drift</div><div class="v">0.12&ndash;0.2 m over 60 m</div></div><div class="fact"><div class="k">Grading</div><div class="v">NEES consistency tests</div></div></div>
+    <div class="gradient-hero"><div class="ttl">IRIS</div><div class="sub">GNSS-denied visual&ndash;inertial navigation</div></div>
+    <div class="prose" style="margin-top:28px;">
+  <h2>The instrument</h2>
+  <p>IRIS is a visual&ndash;inertial navigation system for flight without GNSS. I built the simulation and characterisation instrument used to test it end to end:</p>
+  <ul>
+    <li>Analytic trajectory generation and an Allan-variance-matched, bit-faithful synthetic IMU.</li>
+    <li>Photoreal camera rendering with Unreal Engine and Cesium.</li>
+    <li>A browser-based flight console that runs the production MSCKF estimator blind and grades tracking, drift and divergence with NEES consistency tests.</li>
+  </ul>
+  <p>Results: 0.12&ndash;0.2 m drift on the 60 m canary trajectory and sub-metre error on photoreal imagery.</p>
+  <h2>Towards a square-root backend</h2>
+  <p>Working from the filter internals (MSCKF nullspace projection and a sliding-window InEKF on a composite SE<sub>k</sub>(3) state), I derived a <span class="highlight">square-root (&radic;VINS / SR-ISWF) backend formulation</span> and identified its exact integration point in OpenVINS. To benchmark it against the baseline, I designed a low-cost visual&ndash;inertial rig: a webcam, an ICM-42688-P IMU and ESP32 hardware timestamping.</p>
+    </div>
+    <div class="detail-chips"><span class="chip">State estimation</span><span class="chip">MSCKF</span><span class="chip">OpenVINS</span><span class="chip">Unreal Engine</span><span class="chip">Sensor simulation</span></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
+        <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
+      <span>Last updated October 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

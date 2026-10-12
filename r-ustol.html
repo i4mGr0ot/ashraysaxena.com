@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RANS-Verified Surrogate Design of Wing Sections for a uSTOL Aircraft &middot; Ashray Saxena</title>
+<meta name="description" content="First-author paper under review at IAAI-27 (Innovative Applications of Artificial Intelligence), with Dr. Sharad Shrivastava, BITS Pilani." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">Ashray Saxena</a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container" style="max-width:900px;">
+    <a class="back-link" href="research.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to Research
+    </a>
+    <p class="kicker">Research &middot; Machine Learning for Aerodynamic Design</p>
+    <h1>RANS-Verified Surrogate Design of Wing Sections for a uSTOL Aircraft</h1>
+    <p class="lede">First-author paper under review at IAAI-27 (Innovative Applications of Artificial Intelligence), with Dr. Sharad Shrivastava, BITS Pilani.</p>
+    
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:900px;">
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Data</div><div class="v">UIUC airfoil corpus</div></div><div class="fact"><div class="k">Surrogate</div><div class="v">Reynolds-conditioned PointNet++</div></div><div class="fact"><div class="k">Generalisation gap</div><div class="v">9.8&times; &rarr; 1.4&times;</div></div><div class="fact"><div class="k">L/D gain</div><div class="v">+15.4% vs B&eacute;zier-GAN</div></div></div>
+    <div class="gradient-hero"><div class="ttl">uSTOL</div><div class="sub">Surrogate wing-section design</div></div>
+    <div class="prose" style="margin-top:28px;">
+  <h2>Thesis of the paper</h2>
+  <p>For surrogate-driven airfoil design, <span class="highlight">how the training data are generated matters more than the surrogate architecture</span>. This end-to-end inverse-design pipeline is built around that observation.</p>
+  <h2>Pipeline</h2>
+  <ul>
+    <li>A physics-regularised Class Shape Transformation (CST) fit of the UIUC airfoil corpus.</li>
+    <li>An NSGA-II data engine that samples across the operating Reynolds-number envelope.</li>
+    <li>A Reynolds-conditioned PointNet++ surrogate trained with a pressure-to-coefficient consistency loss.</li>
+    <li>Final designs verified against SU2 RANS simulations.</li>
+  </ul>
+  <h2>Results</h2>
+  <p>The approach collapses the train&ndash;test generalisation gap from 9.8&times; to 1.4&times; and improves lift-to-drag ratio by 15.4% over a B&eacute;zier-GAN baseline.</p>
+    </div>
+    <div class="detail-chips"><span class="chip">PointNet++</span><span class="chip">NSGA-II</span><span class="chip">CST</span><span class="chip">SU2 RANS</span><span class="chip">uSTOL</span></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
+        <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
+      <span>Last updated October 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
