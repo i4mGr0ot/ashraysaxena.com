@@ -4,27 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Projects &middot; Ashray Saxena</title>
-<meta name="description" content="Engineering projects by Ashray Saxena across aircraft design, propulsion, robotics and instrumentation." />
+<meta name="description" content="Engineering projects by Ashray Saxena: navigation, robotics, high-lift aerodynamics, engine control, CFD and instrumentation." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html"><span class="mono">AS</span> Ashray Saxena</a>
+    <a class="brand" href="index.html">Ashray Saxena</a>
     <button class="nav-toggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
       <a href="projects.html" class="active">Projects</a>
-      <a href="entrepreneurship.html">Entrepreneurship</a>
       <a href="experience.html">Experience</a>
-      <a href="mailto:f20231043@pilani.bits-pilani.ac.in" class="nav-cta">Get in touch</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
     </nav>
   </div>
 </header>
@@ -32,96 +32,105 @@
 <section class="page-head">
   <div class="container">
     <p class="kicker">Projects</p>
-    <h1 style="max-width:16ch;">Things I have built.</h1>
-    <p class="lede" style="margin-top:1.2rem;">Hardware, solvers and flight systems, from blown-wing aircraft to rover payloads. Each card opens to the full project with figures and detail.</p>
+    <h1>Engineering Projects</h1>
+    <p class="lede">Hardware, software and flight systems built in industry, in student teams and in the lab: from visual&ndash;inertial navigation and engine controllers to robotic arms, CFD studies and optical instruments.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="grid grid-3">
-
-      <a class="card reveal" href="p-skynet.html">
-        <div class="card-media tall"><img src="assets/img/lat_sweep.png" alt="SkyNET High-Lift Airfoils" /></div>
-        <div class="card-body">
-          <span class="tag">LAT Aerospace</span>
-          <h3>SkyNET High-Lift Airfoils</h3>
-          <p>An inverse-design and optimization framework that synthesises high-lift airfoils for blown-wing and high-aspect-ratio unmanned aircraft.</p>
-          <div class="meta-row"><span class="chip">Inverse design</span><span class="chip">Blown wing</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-stol.html">
-        <div class="card-media tall"><img src="assets/img/lat_flap_50.png" alt="STOL Blown-Wing Aero" /></div>
-        <div class="card-body">
-          <span class="tag">IIT Bombay</span>
-          <h3>STOL Blown-Wing Aero</h3>
-          <p>A study of counter-circulation and distributed integrated propulsion blown-wing architectures for short take-off and landing aircraft.</p>
-          <div class="meta-row"><span class="chip">STOL</span><span class="chip">Boundary-layer control</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-rocket.html">
-        <div class="card-media tall"><img src="assets/img/dhio_spl.gif" alt="Rocket Combustion Acoustics" /></div>
-        <div class="card-body">
-          <span class="tag">DHIO Research</span>
-          <h3>Rocket Combustion Acoustics</h3>
-          <p>High-fidelity mesh-free CFD of thermoacoustic instability and combustion dynamics inside liquid propellant rocket engines.</p>
-          <div class="meta-row"><span class="chip">Mesh-free CFD</span><span class="chip">Combustion</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-drs.html">
-        <div class="card-media tall"><img src="assets/img/dhio_velocity.gif" alt="Drag Reduction System" /></div>
-        <div class="card-body">
-          <span class="tag">DHIO Research</span>
-          <h3>Drag Reduction System</h3>
-          <p>A transient moving-mesh CFD study of a drag reduction system, resolving the flow as a slotted element opens to shed downforce.</p>
-          <div class="meta-row"><span class="chip">Moving mesh</span><span class="chip">Transient CFD</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-gte.html">
-        <div class="card-media tall" style="background:linear-gradient(150deg,#1c222c,#11141a);"><div style="text-align:center;color:var(--accent);font-family:var(--serif);font-size:1.9rem;line-height:1.15;">FADEC</div></div>
-        <div class="card-body">
-          <span class="tag">LAT Aerospace &middot; GTE Team</span>
-          <h3>FADEC &amp; Turbojet Sim</h3>
-          <p>A modular FADEC for turbojet engines on an STM32 platform, a C++ software-in-the-loop engine simulator, and a hybrid UAV powertrain.</p>
-          <div class="meta-row"><span class="chip">STM32</span><span class="chip">C++ SITL</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-raman.html">
-        <div class="card-media tall" style="background:linear-gradient(150deg,#1c222c,#11141a);"><div style="text-align:center;color:var(--accent);font-family:var(--serif);font-size:1.9rem;line-height:1.15;">Raman</div></div>
-        <div class="card-body">
-          <span class="tag">DST Nidhi Prayas</span>
-          <h3>Raman Spectrophotometer</h3>
-          <p>A high-precision Czerny-Turner Raman spectrophotometer for non-destructive detection of organic biosignatures.</p>
-          <div class="meta-row"><span class="chip">Optics</span><span class="chip">Spectroscopy</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-atv.html">
-        <div class="card-media tall" style="background:linear-gradient(150deg,#1c222c,#11141a);"><div style="text-align:center;color:var(--accent);font-family:var(--serif);font-size:1.9rem;line-height:1.15;">ATV</div></div>
-        <div class="card-body">
-          <span class="tag">ASME &middot; BAJA SAE</span>
-          <h3>Modular ATV Monocoque</h3>
-          <p>A high-torsional-stiffness monocoque chassis for an all-terrain vehicle, with anti-Ackermann steering and a stress-checked geartrain.</p>
-          <div class="meta-row"><span class="chip">Structures</span><span class="chip">FEA</span></div>
-        </div>
-      </a>
-
-      <a class="card reveal" href="p-manipulator.html">
-        <div class="card-media tall" style="background:linear-gradient(150deg,#1c222c,#11141a);"><div style="text-align:center;color:var(--accent);font-family:var(--serif);font-size:1.9rem;line-height:1.15;">5-DOF<br><span style='font-size:1rem;color:var(--muted);'>Manipulator</span></div></div>
-        <div class="card-body">
-          <span class="tag">IEEE RASSE 2025</span>
-          <h3>5-DOF Manipulator</h3>
-          <p>A five degree-of-freedom robotic arm with a hot-swappable end-effector interface for tasks from micro-sampling to warehouse automation.</p>
-          <div class="meta-row"><span class="chip">Robotics</span><span class="chip">Kinematics</span></div>
-        </div>
-      </a>
-
+  <div class="rlist">
+    <div class="ritem">
+      <a class="rthumb txt" href="p-iris.html"><span>IRIS</span><small>GNSS-denied navigation</small></a>
+      <div>
+        <h3><a href="p-iris.html">IRIS: Simulation &amp; Characterisation of a GNSS-Denied Visual&ndash;Inertial Navigation System</a></h3>
+        <div class="venue">LAT Aerospace &middot; 2026</div>
+        <p>Analytic trajectory generation, an Allan-variance-matched synthetic IMU, photoreal camera rendering (Unreal Engine + Cesium) and a browser-based flight console that runs the production MSCKF estimator blind and grades it with NEES consistency tests. 0.12&ndash;0.2 m drift on the 60 m canary trajectory.</p>
+        <div class="meta-row"><span class="chip">State estimation</span><span class="chip">MSCKF / OpenVINS</span><span class="chip">Unreal Engine</span></div>
+      </div>
     </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="p-mswa.html"><span>M-SWA</span><small>Robotic workbench assistant</small></a>
+      <div>
+        <h3><a href="p-mswa.html">M-SWA: Multi-Modal Semantic Workbench Assistant</a></h3>
+        <div class="venue">SOLVE Grant, BITS Pilani &middot; Sep 2026 &ndash; present</div>
+        <p>A voice-driven robotic workbench assistant: a vision&ndash;language model grounds spoken object references, which a leader&ndash;follower arm points to, grasps and hands over, with thermal and acoustic sensing to answer physical questions.</p>
+        <div class="meta-row"><span class="chip">VLM</span><span class="chip">Robotic manipulation</span><span class="chip">Multimodal sensing</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="p-skynet.html"><img src="assets/img/lat_sweep.png" alt="High-lift sweep" loading="lazy" /></a>
+      <div>
+        <h3><a href="p-skynet.html">SkyNET: High-Lift Airfoil Inverse-Design Framework</a></h3>
+        <div class="venue">LAT Aerospace &middot; 2025 &ndash; 2026</div>
+        <p>Synthesises high-lift airfoils for blown-wing UAS from target lift and drag, evaluated with viscous&ndash;inviscid panel methods and SU2; single-slotted Fowler-flap and Coand&#259; devices with deployment kinematics.</p>
+        <div class="meta-row"><span class="chip">Inverse design</span><span class="chip">Blown wing</span><span class="chip">SU2</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="p-gte.html"><span>FADEC</span><small>Engine control</small></a>
+      <div>
+        <h3><a href="p-gte.html">Dual-Channel FADEC &amp; Turbojet Software-in-the-Loop Simulator</a></h3>
+        <div class="venue">LAT Aerospace, Gas Turbine Engine Team</div>
+        <p>A modular dual-channel Full-Authority Digital Engine Controller for microturbojets (STM32H743 and TMS570LS1224, 8-layer board, torch-igniter control) with a C++ software-in-the-loop turbojet simulator; hybrid microturbojet + EDF powertrain on a 130 kg aircraft.</p>
+        <div class="meta-row"><span class="chip">Embedded</span><span class="chip">Controls</span><span class="chip">Propulsion</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="p-stol.html"><img src="assets/img/lat_flap_50.png" alt="STOL flap" loading="lazy" /></a>
+      <div>
+        <h3><a href="p-stol.html">Aerodynamic Characterisation of STOL Configurations</a></h3>
+        <div class="venue">IIT Bombay &middot; Nov 2025 &ndash; Jan 2026</div>
+        <p>Counter-circulation and distributed-integrated-propulsion blown-wing architectures; C<sub>L</sub>&ndash;&alpha; polars quantifying stall delay, boundary-layer-control lift enhancement and slipstream&ndash;wing interaction.</p>
+        <div class="meta-row"><span class="chip">STOL</span><span class="chip">Blown wing</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="p-rocket.html"><img src="assets/img/dhio_velocity.gif" alt="Rocket CFD" loading="lazy" /></a>
+      <div>
+        <h3><a href="p-rocket.html">Rocket Combustion Acoustics (Mesh-Free CFD)</a></h3>
+        <div class="venue">DHIO Research &amp; Engineering &middot; May &ndash; Jul 2025</div>
+        <p>High-fidelity mesh-free CFD of liquid-propellant rocket-engine flows and chamber acoustic coupling for damping and ignition stability.</p>
+        <div class="meta-row"><span class="chip">CFD</span><span class="chip">Combustion</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb" href="p-drs.html"><img src="assets/img/dhio_mesh.gif" alt="Moving mesh" loading="lazy" /></a>
+      <div>
+        <h3><a href="p-drs.html">Drag Reduction System: Transient Moving-Mesh CFD</a></h3>
+        <div class="venue">DHIO Research &amp; Engineering &middot; 2025</div>
+        <p>Arbitrary Lagrangian&ndash;Eulerian moving-mesh study of an actuated drag-reduction system, quantifying closed-versus-open aerodynamic loads.</p>
+        <div class="meta-row"><span class="chip">ALE</span><span class="chip">Transient CFD</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="p-raman.html"><span>Raman</span><small>Spectrophotometer</small></a>
+      <div>
+        <h3><a href="p-raman.html">Czerny&ndash;Turner Raman Spectrophotometer</a></h3>
+        <div class="venue">DST Nidhi Prayas &middot; with Dr. Surojit Pande &middot; May &ndash; Nov 2024</div>
+        <p>A high-precision Raman spectrophotometer for non-destructive detection of organic biosignatures; optical throughput and SNR optimised across grating and CCD selection.</p>
+        <div class="meta-row"><span class="chip">Optics</span><span class="chip">Instrumentation</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="p-atv.html"><span>ATV</span><small>BAJA SAE</small></a>
+      <div>
+        <h3><a href="p-atv.html">Modular ATV Monocoque Chassis</a></h3>
+        <div class="venue">ASME Student Chapter (BAJA SAE) &middot; Sep 2024 &ndash; Feb 2025</div>
+        <p>A high-torsional-stiffness, mass-optimised monocoque with anti-Ackermann steering and a stress-checked geartrain.</p>
+        <div class="meta-row"><span class="chip">Structures</span><span class="chip">FEA</span></div>
+      </div>
+    </div>
+    <div class="ritem">
+      <a class="rthumb txt" href="p-manipulator.html"><span>5-DOF</span><small>Manipulator</small></a>
+      <div>
+        <h3><a href="p-manipulator.html">5-DOF Manipulator with Reconfigurable End-Effectors</a></h3>
+        <div class="venue">GSJ, vol. 13, 2025 &middot; IEEE RASSE 2025</div>
+        <p>A five-degree-of-freedom arm with a hot-swappable end-effector interface and rotational-base control, analysed for workspace and kinematic constraints.</p>
+        <div class="meta-row"><span class="chip">Robotics</span><span class="chip">Kinematics</span></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -129,26 +138,28 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="big">Let's build something.</div>
-        <p class="muted" style="max-width:34ch;">Open to research collaborations, internships and conversations about aerospace, propulsion and anything at the edges of engineering.</p>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4>Pages</h4>
         <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
-        <a href="entrepreneurship.html">Entrepreneurship</a>
-        <a href="experience.html">Experience &amp; Leadership</a>
+        <a href="experience.html">Experience</a>
       </div>
       <div>
-        <h4>Connect</h4>
-        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">Email</a>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
         <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
       </div>
     </div>
     <div class="copy">
       <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
-      <span>Built with care &middot; BITS Pilani</span>
+      <span>Last updated October 2026</span>
     </div>
   </div>
 </footer>

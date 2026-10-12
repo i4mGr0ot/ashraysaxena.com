@@ -7,24 +7,24 @@
 <meta name="description" content="A modular FADEC for turbojet engines on an STM32 platform, a C++ software-in-the-loop engine simulator, and a hybrid UAV powertrain." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html"><span class="mono">AS</span> Ashray Saxena</a>
+    <a class="brand" href="index.html">Ashray Saxena</a>
     <button class="nav-toggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
       <a href="projects.html" class="active">Projects</a>
-      <a href="entrepreneurship.html">Entrepreneurship</a>
       <a href="experience.html">Experience</a>
-      <a href="mailto:f20231043@pilani.bits-pilani.ac.in" class="nav-cta">Get in touch</a>
+      <a href="Ashray_Saxena_Research_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
     </nav>
   </div>
 </header>
@@ -36,18 +36,18 @@
       Back to Projects
     </a>
     <p class="kicker">Project &middot; LAT Aerospace &middot; Gas Turbine Engine Team</p>
-    <h1 style="max-width:20ch;">FADEC and Turbojet Simulation Stack</h1>
-    <p class="lede" style="margin-top:1.1rem;">Gas turbine engine team at LAT Aerospace.</p>
+    <h1>FADEC and Turbojet Simulation Stack</h1>
+    <p class="lede" style="margin-top:1.1rem;">Gas Turbine Engine team at LAT Aerospace.</p>
   </div>
 </section>
 
 <section style="padding-top:clamp(28px,4vw,48px);">
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:clamp(28px,4vw,44px);"><div class="fact"><div class="k">Controller</div><div class="v">STM32 Nucleo H743ZI2</div></div><div class="fact"><div class="k">Simulator</div><div class="v">C++ software-in-the-loop</div></div><div class="fact"><div class="k">Powertrain</div><div class="v">Microturbojet + EDF</div></div><div class="fact"><div class="k">Platform</div><div class="v">130 kg model aircraft</div></div></div>
+    <div class="facts" style="margin-bottom:clamp(28px,4vw,44px);"><div class="fact"><div class="k">Controller</div><div class="v">Dual-channel STM32H743 + TMS570</div></div><div class="fact"><div class="k">Simulator</div><div class="v">C++ software-in-the-loop</div></div><div class="fact"><div class="k">Powertrain</div><div class="v">Microturbojet + EDF</div></div><div class="fact"><div class="k">Platform</div><div class="v">130 kg model aircraft</div></div></div>
     <div class="gradient-hero"><div class="ttl">FADEC</div><div class="sub">Full Authority Digital Engine Control</div></div>
     <div class="prose" style="margin-top:clamp(28px,4vw,44px);">
   <h2>Controlling a jet engine</h2>
-  <p>A Full Authority Digital Engine Controller is the brain of a jet engine, the unit that schedules fuel and protects the engine across its whole operating envelope. I am building a <span class="highlight">modular FADEC</span> for turbojet engines on an STM32 Nucleo H743ZI2.</p>
+  <p>A Full Authority Digital Engine Controller is the brain of a jet engine, the unit that schedules fuel and protects the engine across its whole operating envelope. I am building a <span class="highlight">modular, dual-channel FADEC</span> for microturbojets on an STM32H743 and a TMS570LS1224 safety microcontroller, laid out on an 8-layer board with torch-igniter control.</p>
   <h2>Test it before you burn fuel</h2>
   <p>To develop and tune the controller without risking hardware, I built a C++ software in the loop framework that simulates the turbojet, so the FADEC logic can be exercised against a virtual engine first.</p>
   <h2>Hybrid powertrain</h2>
@@ -61,26 +61,28 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="big">Let's build something.</div>
-        <p class="muted" style="max-width:34ch;">Open to research collaborations, internships and conversations about aerospace, propulsion and anything at the edges of engineering.</p>
+        <p class="addr"><strong>Ashray Saxena</strong><br>
+        Institute of Aerospace Systems (ILR), RWTH Aachen University, Aachen, Germany<br>
+        Department of Mechanical Engineering, BITS Pilani, Pilani, India</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4>Pages</h4>
         <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
         <a href="projects.html">Projects</a>
-        <a href="entrepreneurship.html">Entrepreneurship</a>
-        <a href="experience.html">Experience &amp; Leadership</a>
+        <a href="experience.html">Experience</a>
       </div>
       <div>
-        <h4>Connect</h4>
-        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">Email</a>
+        <h4>Contact</h4>
+        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
         <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
       </div>
     </div>
     <div class="copy">
       <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
-      <span>Built with care &middot; BITS Pilani</span>
+      <span>Last updated October 2026</span>
     </div>
   </div>
 </footer>
