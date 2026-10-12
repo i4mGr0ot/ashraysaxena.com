@@ -44,8 +44,8 @@
 
 <section>
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Data</div><div class="v">UIUC airfoil corpus</div></div><div class="fact"><div class="k">Surrogate</div><div class="v">Reynolds-conditioned PointNet++</div></div><div class="fact"><div class="k">Generalisation gap</div><div class="v">9.8&times; &rarr; 1.4&times;</div></div><div class="fact"><div class="k">L/D gain</div><div class="v">+15.4% vs B&eacute;zier-GAN</div></div></div>
-    <div class="gradient-hero"><div class="ttl">uSTOL</div><div class="sub">Surrogate wing-section design</div></div>
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Status</div><div class="v">Pilot use on a flying prototype</div></div><div class="fact"><div class="k">RANS check, drag</div><div class="v">Within 2.3%</div></div><div class="fact"><div class="k">RANS check, lift</div><div class="v">Within 2.4%</div></div><div class="fact"><div class="k">L/D gain</div><div class="v">+15.4% vs B&eacute;zier-GAN</div></div></div>
+    <figure class="figure" style="margin-top:0;"><div class="frame"><img src="assets/img/ustol_flight.jpg" alt="The uSTOL prototype in flight test" style="max-height:200px;" /></div><figcaption>The uSTOL prototype this work serves, in flight test. Its clean-wing section was produced with this system.</figcaption></figure>
     <div class="prose" style="margin-top:28px;">
   <h2>Thesis of the paper</h2>
   <p>For surrogate-driven airfoil design, <span class="highlight">how the training data are generated matters more than the surrogate architecture</span>. This end-to-end inverse-design pipeline is built around that observation.</p>
@@ -58,6 +58,8 @@
   </ul>
   <h2>Results</h2>
   <p>The approach collapses the train&ndash;test generalisation gap from 9.8&times; to 1.4&times; and improves lift-to-drag ratio by 15.4% over a B&eacute;zier-GAN baseline.</p>
+  <h2>Evidence the design holds</h2>
+  <p>The system is in pilot use and supplied the clean-wing section of the flying uSTOL prototype. At three design points spanning an order of magnitude in Reynolds number and two turbulence closures, SU2 RANS confirms the surrogate&rsquo;s drag to within <span class="highlight">2.3%</span> and its lift to within <span class="highlight">2.4%</span> on geometries it saw only after the design was frozen. Every confirming solution must meet a stated convergence standard; at the tightest point the drag coefficient of variation is 0.017%.</p>
     </div>
     <div class="detail-chips"><span class="chip">PointNet++</span><span class="chip">NSGA-II</span><span class="chip">CST</span><span class="chip">SU2 RANS</span><span class="chip">uSTOL</span></div>
   </div>

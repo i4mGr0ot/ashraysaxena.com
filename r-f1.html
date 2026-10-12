@@ -45,7 +45,7 @@
 <section>
   <div class="container" style="max-width:900px;">
     <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Problem</div><div class="v">Minimum-time qualifying lap</div></div><div class="fact"><div class="k">Controls</div><div class="v">Active aero + 350 kW MGU-K</div></div><div class="fact"><div class="k">Solver</div><div class="v">CasADi / IPOPT collocation</div></div><div class="fact"><div class="k">Validation</div><div class="v">Within 0.17% of 2026 poles</div></div></div>
-    <div class="gradient-hero"><div class="ttl">F1 2026</div><div class="sub">Active aerodynamics &middot; energy deployment</div></div>
+    <div class="hero-figure"><img src="assets/img/f1_racing_lines.jpg" alt="Optimal racing lines and speed over the full track limits at Suzuka, Monaco, Melbourne and Shanghai" /></div>
     <div class="prose" style="margin-top:28px;">
   <h2>Motivation</h2>
   <p>The 2026 Formula One regulations couple two new degrees of freedom: movable aerodynamic elements that switch between high-downforce and low-drag modes, and a 350 kW MGU-K whose deployment is ramped down with speed. Choosing when to switch aero mode and when to deploy or harvest energy are not independent decisions, so this work treats them as a <span class="highlight">single minimum-time optimal control problem</span>.</p>
@@ -57,6 +57,8 @@
   </ul>
   <h2>Outcome</h2>
   <p>Calibrated to demonstrated capability, the model reproduces real 2026 pole-position lap times to within <span class="highlight">0.17%</span>. A preprint is available on SSRN.</p>
+  <figure class="figure"><div class="frame"><img src="assets/img/f1_suzuka.jpg" alt="Suzuka: speed, MGU-K deploy and harvest, battery state and the active-aero mode (shaded where the low-drag X mode is open), all chosen together by the optimiser." loading="lazy" /></div><figcaption>Suzuka: speed, MGU-K deploy and harvest, battery state and the active-aero mode (shaded where the low-drag X mode is open), all chosen together by the optimiser.</figcaption></figure>
+  <div class="figure-grid"><figure class="figure"><div class="frame"><img src="assets/img/f1_calibration.png" alt="Lap-time error against real 2026 qualifying poles for the point-mass and dynamic-vehicle solvers." loading="lazy" /></div><figcaption>Lap-time error against real 2026 qualifying poles for the point-mass and dynamic-vehicle solvers.</figcaption></figure><figure class="figure"><div class="frame"><img src="assets/img/f1_ggv.png" alt="The g&ndash;g&ndash;V envelope of the dynamic vehicle model in the high-downforce Z mode and the low-drag X mode." loading="lazy" /></div><figcaption>The g&ndash;g&ndash;V envelope of the dynamic vehicle model in the high-downforce Z mode and the low-drag X mode.</figcaption></figure></div>
     </div>
     <div class="detail-chips"><span class="chip">Optimal control</span><span class="chip">Direct collocation</span><span class="chip">CasADi / IPOPT</span><span class="chip">Vehicle dynamics</span><span class="chip">Energy management</span></div>
   </div>
