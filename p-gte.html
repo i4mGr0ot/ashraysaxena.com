@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FADEC and Turbojet Simulation Stack &middot; Ashray Saxena</title>
-<meta name="description" content="A modular FADEC for turbojet engines on an STM32 platform, a C++ software-in-the-loop engine simulator, and a hybrid UAV powertrain." />
+<title>Dual-Lane FADEC and a Validated Turbojet Software-in-the-Loop Simulator &middot; Ashray Saxena</title>
+<meta name="description" content="Gas Turbine Engine team: engine control for a 130 kg hybrid microturbojet + electric-ducted-fan aircraft." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -35,25 +35,32 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       Back to Projects
     </a>
-    <p class="kicker">Project &middot; LAT Aerospace &middot; Gas Turbine Engine Team</p>
-    <h1>FADEC and Turbojet Simulation Stack</h1>
-    <p class="lede" style="margin-top:1.1rem;">Gas Turbine Engine team at LAT Aerospace.</p>
+    <p class="kicker">Project &middot; Propulsion Control</p>
+    <h1>Dual-Lane FADEC and a Validated Turbojet Software-in-the-Loop Simulator</h1>
+    <p class="lede">Gas Turbine Engine team: engine control for a 130 kg hybrid microturbojet + electric-ducted-fan aircraft.</p>
+    
   </div>
 </section>
 
-<section style="padding-top:clamp(28px,4vw,48px);">
+<section>
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:clamp(28px,4vw,44px);"><div class="fact"><div class="k">Controller</div><div class="v">Dual-channel STM32H743 + TMS570</div></div><div class="fact"><div class="k">Simulator</div><div class="v">C++ software-in-the-loop</div></div><div class="fact"><div class="k">Powertrain</div><div class="v">Microturbojet + EDF</div></div><div class="fact"><div class="k">Platform</div><div class="v">130 kg model aircraft</div></div></div>
-    <div class="gradient-hero"><div class="ttl">FADEC</div><div class="sub">Full Authority Digital Engine Control</div></div>
-    <div class="prose" style="margin-top:clamp(28px,4vw,44px);">
-  <h2>Controlling a jet engine</h2>
-  <p>A Full Authority Digital Engine Controller is the brain of a jet engine, the unit that schedules fuel and protects the engine across its whole operating envelope. I am building a <span class="highlight">modular, dual-channel FADEC</span> for microturbojets on an STM32H743 and a TMS570LS1224 safety microcontroller, laid out on an 8-layer board with torch-igniter control.</p>
-  <h2>Test it before you burn fuel</h2>
-  <p>To develop and tune the controller without risking hardware, I built a C++ software in the loop framework that simulates the turbojet, so the FADEC logic can be exercised against a virtual engine first.</p>
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Command lane</div><div class="v">STM32H743 Cortex-M7</div></div><div class="fact"><div class="k">Monitor lane</div><div class="v">STM32G0B1 Cortex-M0+</div></div><div class="fact"><div class="k">Board</div><div class="v">8-layer, annular</div></div><div class="fact"><div class="k">SITL accuracy</div><div class="v">Thrust &asymp; 5%, 70&ndash;93 k rpm</div></div></div>
+    <figure class="figure"><div class="frame"><img src="assets/img/fadec_lanes.png" alt="Lane partitioning. The command lane runs the control law and meters fuel; the monitor lane, on its own sensors and buses, only enforces limits and drives a hardware fuel-cut interlock without the command lane&rsquo;s consent." loading="lazy" /></div><figcaption>Lane partitioning. The command lane runs the control law and meters fuel; the monitor lane, on its own sensors and buses, only enforces limits and drives a hardware fuel-cut interlock without the command lane&rsquo;s consent.</figcaption></figure>
+    <div class="prose" style="margin-top:28px;">
+  <h2>Two lanes, not the same lane twice</h2>
+  <p>Full authority means there is no mechanical backup, so an error in the controller is an error in the engine. The controller is a <span class="highlight">dual-lane board on an eight-layer stackup</span>, in an annular form factor that wraps the engine. The command lane is an STM32H743 Cortex-M7 that runs the control law and meters fuel. The monitor lane is a deliberately smaller STM32G0B1 Cortex-M0+ running simpler code off its own sensors on separate SPI buses, so a fault in the command lane has no path into the monitor&rsquo;s verdict. The two meet only on an RS422 cross-link, and trip authority is asymmetric.</p>
+  <p>The firmware is split into sensing, scheduling, actuation (fuel pump and the torch-igniter state machine) and protection modules with defined interfaces, so a scheduling error cannot disable the limit that guards it, and a lane can be rehosted without rewriting the control laws.</p>
+  <h2>A design review that found eight defects</h2>
+  <p>After designing the board I reviewed every net against the silicon documentation rather than the schematic net names. Eight defects surfaced, six of which would have survived functional bring-up: a CAN transceiver wired to pins with no FDCAN function, a split reference plane under long runs, decoupling below the reference design, an unfused rail exported to flight equipment, watchdogs left in factory-disabled strapping, and gaps in reverse-polarity protection among them. All were resolved before fabrication.</p>
+  <h2>Software-in-the-loop turbojet, validated</h2>
+  <p>The controller is developed against a C++ plant model rather than against an engine, so a bad fuel schedule costs a rerun instead of a turbine. The simulator was verified against the manufacturer specification at ISA conditions and validated against a <span class="highlight">hot-day ground-test campaign (39 &deg;C, 97 kPa)</span> with load-cell and FADEC-terminal data, using the same 305-second fuel staircase held to thermo-mechanical equilibrium at ten power settings. Across 70&ndash;93 k rpm it reproduces manufacturer thrust to a mean 5% and EGT to a mean 28 &deg;C, and the atmospheric derate emerges from first principles rather than being applied as a correction.</p>
+  <figure class="figure"><div class="frame"><img src="assets/img/sitl_thrust.png" alt="Master thrust comparison. The shaded corridor is the density derate between the manufacturer curve and its site-corrected value; the SITL at ISA tracks the manufacturer edge, the SITL at site conditions tracks the measured load-cell data, so one model spans both atmospheres." loading="lazy" /></div><figcaption>Master thrust comparison. The shaded corridor is the density derate between the manufacturer curve and its site-corrected value; the SITL at ISA tracks the manufacturer edge, the SITL at site conditions tracks the measured load-cell data, so one model spans both atmospheres.</figcaption></figure>
+  <div class="figure-grid"><figure class="figure"><div class="frame"><img src="assets/img/sitl_egt.png" alt="Exhaust-gas temperature: the turbine-face station (manufacturer, SITL at ISA) and the exhaust-plane station (SITL at site, measured FADEC probe). The ~200 &deg;C offset is the probe location, not the engine." loading="lazy" /></div><figcaption>Exhaust-gas temperature: the turbine-face station (manufacturer, SITL at ISA) and the exhaust-plane station (SITL at site, measured FADEC probe). The ~200 &deg;C offset is the probe location, not the engine.</figcaption></figure><figure class="figure"><div class="frame"><img src="assets/img/sitl_timeseries.png" alt="Site run over the 305 s staircase: rotor speed, net thrust, true turbine-exit temperature against the lagging EGT probe, and the fuel-flow command." loading="lazy" /></div><figcaption>Site run over the 305 s staircase: rotor speed, net thrust, true turbine-exit temperature against the lagging EGT probe, and the fuel-flow command.</figcaption></figure></div>
+  <div class="figure-grid"><figure class="figure"><div class="frame"><img src="assets/img/sitl_compressor.png" alt="Compressor pressure ratio and isentropic efficiency along the operating line, reaching the design values (PR 4.0, &eta; 0.794) at 93 k rpm." loading="lazy" /></div><figcaption>Compressor pressure ratio and isentropic efficiency along the operating line, reaching the design values (PR 4.0, &eta; 0.794) at 93 k rpm.</figcaption></figure><figure class="figure"><div class="frame"><img src="assets/img/sitl_surge.png" alt="Surge margin stays above the 0.80 safety threshold across the line; turbine-inlet temperature stays well under the 1150 &deg;C limit in both atmospheres." loading="lazy" /></div><figcaption>Surge margin stays above the 0.80 safety threshold across the line; turbine-inlet temperature stays well under the 1150 &deg;C limit in both atmospheres.</figcaption></figure></div>
   <h2>Hybrid powertrain</h2>
-  <p>On the propulsion side I worked on a hybrid UAV powertrain that pairs microturbojets with electric ducted fans on a 130 kilogram model aircraft, blending the endurance of a turbine with the responsiveness of electric thrust.</p>
+  <p>The engine work sits inside a hybrid UAV powertrain that pairs microturbojets with electric ducted fans on a 130 kg aircraft, blending the endurance of a turbine with the responsiveness of electric thrust.</p>
     </div>
-    <div class="detail-chips"><span class="chip">Embedded C++</span><span class="chip">STM32</span><span class="chip">Software-in-the-loop</span><span class="chip">Hybrid powertrain</span><span class="chip">Controls</span></div>
+    <div class="detail-chips"><span class="chip">Embedded C/C++</span><span class="chip">STM32</span><span class="chip">Redundant architecture</span><span class="chip">Design review</span><span class="chip">Software-in-the-loop</span><span class="chip">V&amp;V</span></div>
   </div>
 </section>
 
