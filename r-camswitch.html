@@ -44,13 +44,19 @@
 
 <section>
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Vehicle</div><div class="v">4WIS steer-by-wire rover</div></div><div class="fact"><div class="k">Mechanism</div><div class="v">3D-printed rotary cam switch</div></div><div class="fact"><div class="k">Modes</div><div class="v">Pivot &harr; Ackermann</div></div><div class="fact"><div class="k">Testing</div><div class="v">Autonomous rover</div></div></div>
-    <div class="hero-figure"><img src="assets/img/criss_rover.jpg" alt="CRISS Robotics rovers" /></div>
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Mechanism</div><div class="v">3D-printed cam + 12-bit encoder</div></div><div class="fact"><div class="k">Switch window</div><div class="v">~12&deg;, one clean transition</div></div><div class="fact"><div class="k">Ackermann error</div><div class="v">&le; 1.5%</div></div><div class="fact"><div class="k">Inter-module skew</div><div class="v">&le; 50 ms</div></div></div>
+    <div class="figure-grid" style="margin-top:0;"><figure class="figure"><div class="frame"><img src="assets/img/camswitch_rover.jpg" alt="The CRISS Robotics rover with four independently steered wheel modules: 58 kg, 777.7 mm wheelbase, 475.2 mm track." loading="lazy" /></div><figcaption>The CRISS Robotics rover with four independently steered wheel modules: 58 kg, 777.7 mm wheelbase, 475.2 mm track.</figcaption></figure><figure class="figure"><div class="frame"><img src="assets/img/camswitch_cad.jpg" alt="CAD model of one steering gearbox with the 3D-printed rotary cam switch." loading="lazy" /></div><figcaption>CAD model of one steering gearbox with the 3D-printed rotary cam switch.</figcaption></figure></div>
     <div class="prose" style="margin-top:28px;">
   <h2>Problem</h2>
   <p>A four-wheel independent steering (4WIS) rover can turn on the spot or drive with Ackermann geometry, but switching between these modes must be reliable and verifiable, especially on an autonomous platform.</p>
   <h2>Approach</h2>
-  <p>A <span class="highlight">low-cost 3D-printed rotary cam switch</span> paired with an encoder drives and verifies the transition between zero-radius pivot and Ackermann steering. The mechanism was developed for the CRISS Robotics rover and tested on the autonomous vehicle.</p>
+  <p>A <span class="highlight">low-cost 3D-printed rotary cam switch</span> paired with an encoder drives and verifies the transition between zero-radius pivot and Ackermann steering. The mechanism was developed for the CRISS Robotics rover and tested on the autonomous vehicle, with a five-phase transition logic in ROS 2 that withholds drive torque until the new geometry is confirmed.</p>
+  <h2>Results</h2>
+  <ul>
+    <li>On the bench the cam switch closed over a fixed window of about 12&deg; of encoder-shaft rotation and produced one clean transition per crossing at a 5 ms sampling period; a threshold on the encoder alone changed state three times over the same crossing.</li>
+    <li>On the rover, all 30 transitions into pivot mode and 27 of 40 back to Ackermann completed, with about 10 s latency (set by the steering rate) and at most 50 ms skew between modules.</li>
+    <li>In Ackermann mode the measured wheel angles deviated from the ideal geometry by at most 1.5%.</li>
+  </ul>
     </div>
     <div class="detail-chips"><span class="chip">Steer-by-wire</span><span class="chip">Mechanism design</span><span class="chip">Additive manufacturing</span><span class="chip">Field robotics</span></div>
   </div>
