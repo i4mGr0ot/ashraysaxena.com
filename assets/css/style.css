@@ -278,6 +278,7 @@ a.card:hover{ text-decoration:none; border-color:#bdb9b0; box-shadow:0 2px 10px 
 .figure figcaption{ padding:10px 14px; color:var(--muted); font-size:.86rem; border-top:1px solid var(--line); background:var(--bg-2); }
 .figure-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:1.8rem 0; }
 .figure-grid .figure{ margin:0; }
+.figure-grid.three{ grid-template-columns:repeat(3,1fr); }
 .figure-grid .figure img{ max-height:320px; }
 .hero-figure{ margin:0 0 8px; border:1px solid var(--line); border-radius:3px; overflow:hidden; background:#fff; }
 .hero-figure img{ width:100%; }
@@ -318,5 +319,5 @@ a.card:hover{ text-decoration:none; border-color:#bdb9b0; box-shadow:0 2px 10px 
   .grid-2,.grid-3{ grid-template-columns:1fr; }
   .footer-grid{ grid-template-columns:1fr; gap:18px; }
   .facts{ grid-template-columns:1fr 1fr; }
-  .figure-grid{ grid-template-columns:1fr; }
+  .figure-grid, .figure-grid.three{ grid-template-columns:1fr; }
 }
