@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IRIS: Simulation and Characterisation of a GNSS-Denied Visual&ndash;Inertial Navigation System &middot; Ashray Saxena</title>
-<meta name="description" content="Navigation work at LAT Aerospace, 2026." />
+<title>IRIS: A Simulator for GNSS-Denied Visual&ndash;Inertial Navigation &middot; Ashray Saxena</title>
+<meta name="description" content="Perception &amp; autonomy team, LAT Aerospace &middot; Aug 2025 &ndash; Aug 2026." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -36,15 +36,15 @@
       Back to Projects
     </a>
     <p class="kicker">Project &middot; LAT Aerospace</p>
-    <h1>IRIS: Simulation and Characterisation of a GNSS-Denied Visual&ndash;Inertial Navigation System</h1>
-    <p class="lede">Navigation work at LAT Aerospace, 2026.</p>
+    <h1>IRIS: A Simulator for GNSS-Denied Visual&ndash;Inertial Navigation</h1>
+    <p class="lede">Perception &amp; autonomy team, LAT Aerospace &middot; Aug 2025 &ndash; Aug 2026.</p>
     
   </div>
 </section>
 
 <section>
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Estimator</div><div class="v">MSCKF (OpenVINS fork)</div></div><div class="fact"><div class="k">Rendering</div><div class="v">Unreal Engine + Cesium</div></div><div class="fact"><div class="k">Drift</div><div class="v">0.12&ndash;0.2 m over 60 m</div></div><div class="fact"><div class="k">Grading</div><div class="v">NEES consistency tests</div></div></div>
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Estimator</div><div class="v">OpenVINS-based MSCKF</div></div><div class="fact"><div class="k">Rendering</div><div class="v">Unreal Engine + Cesium</div></div><div class="fact"><div class="k">Drift</div><div class="v">0.12&ndash;0.2 m over 60 m</div></div><div class="fact"><div class="k">Flight tests</div><div class="v">11, self-flown</div></div></div>
     <figure class="figure"><div class="frame"><img src="assets/img/iris_console.jpg" alt="The flight console during a run. Left: the photorealistic nadir view the estimator consumes (Google 3-D Tiles through Cesium in Unreal Engine 5). Right: estimate against truth on the figure-of-eight, with drift, NEES and the filter&rsquo;s own reported uncertainty below. This run is shown failing on purpose: the console flags it as diverged and inconsistent." loading="lazy" /></div><figcaption>The flight console during a run. Left: the photorealistic nadir view the estimator consumes (Google 3-D Tiles through Cesium in Unreal Engine 5). Right: estimate against truth on the figure-of-eight, with drift, NEES and the filter&rsquo;s own reported uncertainty below. This run is shown failing on purpose: the console flags it as diverged and inconsistent.</figcaption></figure>
     <div class="prose" style="margin-top:28px;">
   <h2>The instrument</h2>
@@ -62,6 +62,8 @@
   <p>Every run is graded blind against truth. Drift, the normalised estimation error squared (NEES) and the filter&rsquo;s own reported uncertainty are tracked together, so a run that looks accurate but is overconfident still fails. The run library turns this into a regression gate for every change to the estimator.</p>
   <figure class="figure"><div class="frame"><img src="assets/img/iris_acceptance.jpg" alt="What acceptance looks like: position drift against ground truth, the NEES statistic against its consistency bound, and the filter&rsquo;s reported uncertainty, with the verdict and the event timeline on the right." loading="lazy" /></div><figcaption>What acceptance looks like: position drift against ground truth, the NEES statistic against its consistency bound, and the filter&rsquo;s reported uncertainty, with the verdict and the event timeline on the right.</figcaption></figure>
   <figure class="figure"><div class="frame"><img src="assets/img/iris_runlibrary.jpg" alt="The run library: every run stored with its verdict (drifted, diverged, passed), its metrics and the exact configuration that produced it." loading="lazy" /></div><figcaption>The run library: every run stored with its verdict (drifted, diverged, passed), its metrics and the exact configuration that produced it.</figcaption></figure>
+  <h2>Validated in flight</h2>
+  <p>IRIS was validated against <span class="highlight">11 self-flown flight tests</span>. When the estimator failed after a sharp turn on one flight, I ran a walking test with the camera&ndash;IMU rig before and after every following flight and traced the failure to an inaccurate model of the time offset and mounting position between the camera and the IMU.</p>
   <h2>Towards a square-root backend</h2>
   <p>Working from the filter internals (MSCKF nullspace projection and a sliding-window InEKF on a composite SE<sub>k</sub>(3) state), I derived a <span class="highlight">square-root (&radic;VINS / SR-ISWF) backend formulation</span> and identified its exact integration point in OpenVINS. To benchmark it against the baseline, I designed a low-cost visual&ndash;inertial rig: a webcam, an ICM-42688-P IMU and ESP32 hardware timestamping.</p>
     </div>
@@ -86,15 +88,16 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="mailto:f20231043@pilani.bits-pilani.ac.in">f20231043@pilani.bits-pilani.ac.in</a>
+        <a href="mailto:aashraysaxena@gmail.com">aashraysaxena@gmail.com</a>
         <a href="https://www.linkedin.com/in/ashraysaxena/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/i4mGr0ot" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0009-0001-8570-9160" target="_blank" rel="noopener">ORCID</a>
         <a href="Ashray_Saxena_Research_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
       </div>
     </div>
     <div class="copy">
       <span>&copy; <span id="year">2026</span> Ashray Saxena</span>
-      <span>Last updated October 2026</span>
+      <span>Last updated November 2026</span>
     </div>
   </div>
 </footer>
