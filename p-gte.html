@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Engine Controller (FADEC) for a Micro-Turbojet, and a Validated Software-in-the-Loop Engine Model &middot; Ashray Saxena</title>
-<meta name="description" content="Engine controls team, LAT Aerospace. GTRE, India&rsquo;s Gas Turbine Research Establishment, certified the board for further deployment." />
+<meta name="description" content="Engine controls team, LAT Aerospace." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -37,21 +37,19 @@
     </a>
     <p class="kicker">Project &middot; Propulsion Control</p>
     <h1>Engine Controller (FADEC) for a Micro-Turbojet, and a Validated Software-in-the-Loop Engine Model</h1>
-    <p class="lede">Engine controls team, LAT Aerospace. GTRE, India&rsquo;s Gas Turbine Research Establishment, certified the board for further deployment.</p>
+    <p class="lede">Engine controls team, LAT Aerospace.</p>
     <div class="hero-actions"><a class="btn" href="https://doi.org/10.5281/zenodo.23136806" target="_blank" rel="noopener">DOI</a></div>
   </div>
 </section>
 
 <section>
   <div class="container" style="max-width:900px;">
-    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Certification</div><div class="v">GTRE, for further deployment</div></div><div class="fact"><div class="k">Architecture</div><div class="v">Two independent processors</div></div><div class="fact"><div class="k">Board</div><div class="v">8-layer, annular</div></div><div class="fact"><div class="k">SITL accuracy</div><div class="v">Thrust &asymp; 5%, 70&ndash;93 k rpm</div></div></div>
+    <div class="facts" style="margin-bottom:28px;"><div class="fact"><div class="k">Lanes</div><div class="v">Control + independent monitor</div></div><div class="fact"><div class="k">Architecture</div><div class="v">Two independent processors</div></div><div class="fact"><div class="k">Board</div><div class="v">8-layer, annular</div></div><div class="fact"><div class="k">SITL accuracy</div><div class="v">Thrust &asymp; 5%, 70&ndash;93 k rpm</div></div></div>
     <figure class="figure"><div class="frame"><img src="assets/img/fadec_lanes.png" alt="Lane partitioning. The command lane runs the control law and meters fuel; the monitor lane, on its own sensors and buses, only enforces limits and drives a hardware fuel-cut interlock without the command lane&rsquo;s consent." loading="lazy" /></div><figcaption>Lane partitioning. The command lane runs the control law and meters fuel; the monitor lane, on its own sensors and buses, only enforces limits and drives a hardware fuel-cut interlock without the command lane&rsquo;s consent.</figcaption></figure>
     <div class="prose" style="margin-top:28px;">
   <h2>Two lanes, not the same lane twice</h2>
   <p>Full authority means there is no mechanical backup, so an error in the controller is an error in the engine. The controller is a <span class="highlight">dual-lane board on an eight-layer stackup</span>, in an annular form factor that wraps the engine. The command lane is an STM32H743 Cortex-M7 that runs the control law and meters fuel. The monitor lane is a deliberately smaller STM32G0B1 Cortex-M0+ running simpler code off its own sensors on separate SPI buses, so a fault in the command lane has no path into the monitor&rsquo;s verdict. The two meet only on an RS422 cross-link, and trip authority is asymmetric.</p>
   <p>The firmware is split into sensing, scheduling, actuation (fuel pump and the torch-igniter state machine) and protection modules with defined interfaces, so a scheduling error cannot disable the limit that guards it, and a lane can be rehosted without rewriting the control laws.</p>
-  <h2>Certified by GTRE</h2>
-  <p>The controller was tested against every failure case on the software model of the engine before it went near hardware, and <span class="highlight">GTRE (India&rsquo;s Gas Turbine Research Establishment) certified the board for further deployment</span>.</p>
   <h2>A design review that found eight defects</h2>
   <p>After designing the board I reviewed every net against the silicon documentation rather than the schematic net names. Eight defects surfaced, six of which would have survived functional bring-up: a CAN transceiver wired to pins with no FDCAN function, a split reference plane under long runs, decoupling below the reference design, an unfused rail exported to flight equipment, watchdogs left in factory-disabled strapping, and gaps in reverse-polarity protection among them. All were resolved before fabrication.</p>
   <h2>Software-in-the-loop turbojet, validated</h2>
