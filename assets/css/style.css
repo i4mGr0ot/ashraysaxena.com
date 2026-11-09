@@ -223,6 +223,7 @@ a.card:hover{ text-decoration:none; border-color:#bdb9b0; box-shadow:0 2px 10px 
 
 /* ---------- Stats ---------- */
 .stat-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat-grid.three{ grid-template-columns:repeat(3,1fr); }
 .stat{ border:1px solid var(--line); border-radius:3px; padding:16px; text-align:center; background:#fff; }
 .stat .num{ font-family:var(--serif); font-size:1.7rem; color:var(--accent); line-height:1.1; }
 .stat .lbl{ font-size:.86rem; color:var(--text); margin-top:.35rem; font-weight:500; }
@@ -321,3 +322,4 @@ a.card:hover{ text-decoration:none; border-color:#bdb9b0; box-shadow:0 2px 10px 
   .facts{ grid-template-columns:1fr 1fr; }
   .figure-grid, .figure-grid.three{ grid-template-columns:1fr; }
 }
+@media (max-width:620px){ .stat-grid.three{ grid-template-columns:1fr; } }
